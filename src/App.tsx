@@ -647,7 +647,7 @@ try {
               <img
                 src="/assets/google.png"
                 alt="Google Logo"
-                className="h-13"
+                className="h-12"
               />
             </div>
             <div className="flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition">
