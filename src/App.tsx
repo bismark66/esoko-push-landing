@@ -631,31 +631,27 @@ try {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
             <div className="flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition">
               <img
-                src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80"
-                alt="Company Logo"
+                src="/assets/ubs-logo.webp"
+                alt="UBS Logo"
                 className="h-12"
               />
             </div>
             <div className="flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition">
               <img
-                src="https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80"
-                alt="Company Logo"
+                src="/assets/vodafone.png"
+                alt="Vodafone Logo"
                 className="h-12"
               />
             </div>
             <div className="flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition">
               <img
-                src="https://images.unsplash.com/photo-1611162618071-b39a2ec055fb?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80"
-                alt="Company Logo"
-                className="h-12"
+                src="/assets/google.png"
+                alt="Google Logo"
+                className="h-13"
               />
             </div>
             <div className="flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition">
-              <img
-                src="https://images.unsplash.com/photo-1611162618479-ee4a1f8d5be9?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80"
-                alt="Company Logo"
-                className="h-12"
-              />
+              <img src="/assets/usaid.png" alt="US Aid Logo" className="h-12" />
             </div>
           </div>
 
