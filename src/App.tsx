@@ -93,11 +93,7 @@ try {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
-              <img
-                src="../public/assets/esoko_logo.png"
-                alt=""
-                className="w-30 h-20"
-              />
+              <img src="/assets/esoko_logo.png" alt="" className="w-30 h-20" />
             </div>
 
             {/* Desktop Navigation */}
@@ -1085,7 +1081,7 @@ try {
                 {/* <MessageSquare className="h-8 w-8 text-white" /> */}
                 <span className="ml-2 text-xl font-bold">
                   <img
-                    src="../public/assets/esoko_logo.png"
+                    src="/assets/esoko_logo.png"
                     alt="logo"
                     className="w-40 h-20"
                   />
