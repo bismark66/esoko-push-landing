@@ -447,7 +447,7 @@ try {
                 </li>
               </ul>
               <button className="w-full bg-gray-100 text-[#0052CC] py-3 rounded-md font-medium hover:bg-gray-200 transition">
-                Get Started
+                <a href="https://push.esoko.com/en/signup">Get Started</a>
               </button>
             </div>
 
@@ -487,7 +487,7 @@ try {
                 </li>
               </ul>
               <button className="w-full bg-white text-[#0052CC] py-3 rounded-md font-medium hover:bg-gray-100 transition">
-                Get Started
+                <a href="https://push.esoko.com/en/signup">Get Started</a>
               </button>
             </div>
 
