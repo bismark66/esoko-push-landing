@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import {
   MessageSquare,
   Phone,
@@ -12,6 +13,7 @@ import {
   ChevronRight,
   MessageCircle,
 } from "lucide-react";
+import { useCopilotReadable } from "@copilotkit/react-core";
 
 function App() {
   const [showCookieBanner, setShowCookieBanner] = useState(true);
@@ -19,12 +21,24 @@ function App() {
   const [email, setEmail] = useState("");
   const [activeLanguage, setActiveLanguage] = useState("JavaScript");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [context, setContext] = useState("");
+
+  useCopilotReadable({
+    description: "About this webiste",
+    value: context,
+  });
 
   const handleNewsletterSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     alert("Thank you for subscribing to our newsletter!");
     setEmail("");
   };
+
+  useEffect(() => {
+    // Extract text from the page
+    setContext(document.body.innerText);
+    console.log(document.body.innerText);
+  }, []);
 
   const codeExamples = {
     JavaScript: `// Install the SDK
@@ -1262,7 +1276,7 @@ try {
             </div>
           </div>
           {/* Newsletter Signup */}
-          <div className="fixed bottom-0 left-0 right-0 bg-[#0052CC] text-white py-4 z-30">
+          {/* <div className="fixed bottom-0 left-0 right-0 bg-[#0052CC] text-white py-4 z-30">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="flex flex-col md:flex-row items-center justify-between">
                 <div className="mb-4 md:mb-0 md:mr-8">
@@ -1294,7 +1308,7 @@ try {
                 </form>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </footer>
 
@@ -1329,7 +1343,7 @@ try {
       )}
 
       {/* Live Chat Widget */}
-      <div className="fixed bottom-20 right-6 z-40">
+      {/* <div className="fixed bottom-20 right-6 z-40">
         {showChat ? (
           <div className="bg-white rounded-lg shadow-xl w-80">
             <div className="bg-[#0052CC] text-white p-4 rounded-t-lg flex justify-between items-center">
@@ -1374,7 +1388,7 @@ try {
             <MessageCircle className="h-6 w-6" />
           </button>
         )}
-      </div>
+      </div> */}
     </div>
   );
 }
