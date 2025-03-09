@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client';
 import App from './App.tsx';
 import './index.css';
 import { CopilotKit } from "@copilotkit/react-core";
-import { CopilotPopup, CopilotSidebar } from "@copilotkit/react-ui";
+import { CopilotPopup } from "@copilotkit/react-ui";
 import "@copilotkit/react-ui/styles.css";
 
 createRoot(document.getElementById("root")!).render(
