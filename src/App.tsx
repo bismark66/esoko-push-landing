@@ -22,6 +22,7 @@ function App() {
   const [activeLanguage, setActiveLanguage] = useState("JavaScript");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [context, setContext] = useState("");
+  const [activePricingTab, setActivePricingTab] = useState("sms");
 
   useCopilotReadable({
     description: "About this webiste",
@@ -99,11 +100,11 @@ try {
     echo 'Error: ' . $error->getMessage();
 }`,
   };
-
+// 'Ariel','Century Gothic','CenturyGothic', 'AppleGothic',
   return (
-    <div className="min-h-screen bg-white text-gray-800 font-sans">
+    <div className="min-h-screen bg-white text-gray-800" style={{ fontFamily: " 'Manrope',Ariel,sans-serif" }}>
       {/* Navigation */}
-      <nav className="bg-white shadow-sm sticky top-0 z-50">
+      <nav className="bg-white shadow-sm sticky top-0 z-50 font-bold">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
@@ -114,27 +115,27 @@ try {
             <div className="hidden md:flex items-center space-x-8">
               <a
                 href="#features"
-                className="text-gray-600 hover:text-[#0052CC]"
+                className="text-gray-600 hover:text-[#e96a26]"
               >
                 Features
               </a>
               <a
                 href="#technical"
-                className="text-gray-600 hover:text-[#0052CC]"
+                className="text-gray-600 hover:text-[#e96a26]"
               >
                 Technical
               </a>
-              <a href="#pricing" className="text-gray-600 hover:text-[#0052CC]">
+              <a href="#pricing" className="text-gray-600 hover:text-[#e96a26]">
                 Pricing
               </a>
               <a
                 href="#integrations"
-                className="text-gray-600 hover:text-[#0052CC]"
+                className="text-gray-600 hover:text-[#e96a26]"
               >
                 Integrations
               </a>
-              <button className="bg-[#0052CC] text-white px-4 py-2 rounded-md hover:bg-blue-700 transition">
-                <a href="https://push.esoko.com/en/signup">Get Started</a>
+              <button className="bg-[#e96a26] text-white px-4 py-2 rounded-md hover:bg-orange-700 transition">
+                <a href="https://sso.esoko.com/en/signup">Get Started</a>
               </button>
             </div>
 
@@ -189,14 +190,14 @@ try {
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white shadow-lg">
             <a
               href="#features"
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-[#0052CC] hover:bg-gray-50"
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-[#FF6B00] hover:bg-gray-50"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Features
             </a>
             <a
               href="#technical"
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-[#0052CC] hover:bg-gray-50"
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-[#FF6B00] hover:bg-gray-50"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Technical
@@ -232,16 +233,16 @@ try {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
-                Powerful SMS & Voice APIs for Modern Applications
+              <h1 className="text-2xl md:text-5xl font-normal leading-tight mb-6 letter-spacing-2 mb-8" style={{ fontFamily: "'Manrope', Ariel, sans-serif",letterSpacing: '-2px',lineHeight: '1.1', color: '#ffffff' }}>
+                Powerful SMS & Voice APIs for modern applications
               </h1>
-              <p className="text-xl mb-8 text-blue-100">
+              <p className="text-xl mb-8 text-[#ffffff]" >
                 Connect with your users globally through reliable, scalable
                 communication APIs that integrate seamlessly with your
                 applications.
               </p>
               <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                <button className="bg-white text-[#0052CC] px-6 py-3 rounded-md font-medium hover:bg-gray-100 transition">
+                <button className="bg-[#e96a26] text-[#fcfcfc] px-6 py-3 rounded-md font-medium hover:bg-gray-100 hover:text-[#e96a26] transition">
                   <a href="https://push.esoko.com/en/signup">Get Started</a>
                   {/* Get Started */}
                 </button>
@@ -254,9 +255,12 @@ try {
             </div>
             <div className="hidden md:block">
               <img
-                src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                // src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+               src="/assets/smiling-lady.jpg"
                 alt="Communication API Illustration"
-                className="rounded-lg shadow-xl"
+                className="rounded-lg shadow-xl w-90 h-100"
+                // width={500}
+                // height={300}
               />
             </div>
           </div>
@@ -267,10 +271,10 @@ try {
       <section id="features" className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl font-bold text-[#0052CC] mb-4">
               Powerful Communication APIs
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-[#0052CC] max-w-3xl mx-auto">
               Our platform provides everything you need to build robust
               communication features into your applications.
             </p>
@@ -278,7 +282,7 @@ try {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* SMS API */}
-            <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition">
+            <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 ease-in-out border-2 border-transparent hover:border-[#e96a26]">
               <div className="bg-blue-100 p-3 rounded-full w-14 h-14 flex items-center justify-center mb-6">
                 <MessageSquare className="h-8 w-8 text-[#0052CC]" />
               </div>
@@ -290,7 +294,7 @@ try {
             </div>
 
             {/* Voice API */}
-            <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition">
+            <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 ease-in-out border-2 border-transparent hover:border-[#e96a26]">
               <div className="bg-blue-100 p-3 rounded-full w-14 h-14 flex items-center justify-center mb-6">
                 <Phone className="h-8 w-8 text-[#0052CC]" />
               </div>
@@ -302,7 +306,7 @@ try {
             </div>
 
             {/* Global Coverage */}
-            <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition">
+            <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 ease-in-out border-2 border-transparent hover:border-[#e96a26]">
               <div className="bg-blue-100 p-3 rounded-full w-14 h-14 flex items-center justify-center mb-6">
                 <Globe className="h-8 w-8 text-[#0052CC]" />
               </div>
@@ -314,7 +318,7 @@ try {
             </div>
 
             {/* Analytics */}
-            <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition">
+            <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 ease-in-out border-2 border-transparent hover:border-[#e96a26]">
               <div className="bg-blue-100 p-3 rounded-full w-14 h-14 flex items-center justify-center mb-6">
                 <BarChart2 className="h-8 w-8 text-[#0052CC]" />
               </div>
@@ -332,16 +336,16 @@ try {
       <section id="technical" className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl font-bold text-[#0052CC] mb-4">
               Built for Developers
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-[#0052CC] max-w-3xl mx-auto">
               Our APIs are designed to be easy to integrate, with comprehensive
               documentation and support.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-12 items-start">
             <div>
               <div className="mb-8">
                 <div className="flex items-center mb-4">
@@ -411,7 +415,7 @@ try {
                 </button>
               </div>
               <pre className="text-blue-400 overflow-x-auto p-4 bg-gray-800 rounded-b-md">
-                {codeExamples[activeLanguage]}
+                {codeExamples[activeLanguage as keyof typeof codeExamples]}
               </pre>
             </div>
           </div>
@@ -422,131 +426,233 @@ try {
       <section id="pricing" className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl font-bold text-[#0052CC] mb-4">
               Simple, Transparent Pricing
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-[#0052CC] max-w-3xl mx-auto">
               Choose the plan that works best for your business needs, with no
               hidden fees.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {/* Starter Plan */}
-            <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition">
-              <h3 className="text-xl font-bold mb-2">Starter</h3>
-              <p className="text-gray-600 mb-6">
-                Perfect for small projects and startups
-              </p>
-              <div className="mb-6">
-                <span className="text-4xl font-bold">Ghc0</span>
-                <span className="text-gray-600"> / month</span>
-              </div>
-              <ul className="mb-8 space-y-3">
-                <li className="flex items-center">
-                  <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
-                  <span>100 SMS messages / month</span>
-                </li>
-                <li className="flex items-center">
-                  <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
-                  <span>50 Voice minutes / month</span>
-                </li>
-                <li className="flex items-center">
-                  <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
-                  <span>Basic analytics</span>
-                </li>
-                <li className="flex items-center">
-                  <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
-                  <span>Email support</span>
-                </li>
-              </ul>
-              <button className="w-full bg-gray-100 text-[#0052CC] py-3 rounded-md font-medium hover:bg-gray-200 transition">
-                <a href="https://push.esoko.com/en/signup">Get Started</a>
+          {/* Pricing Tabs */}
+          <div className="mb-12">
+            <div className="flex justify-center space-x-4 mb-8">
+              <button
+                onClick={() => setActivePricingTab("sms")}
+                className={`px-6 py-3 rounded-md font-medium transition ${
+                  activePricingTab === "sms"
+                    ? "bg-[#e96a26] text-white"
+                    : "bg-white text-gray-600 hover:bg-gray-50"
+                }`}
+              >
+                SMS Pricing
+              </button>
+              <button
+                onClick={() => setActivePricingTab("voice")}
+                className={`px-6 py-3 rounded-md font-medium transition ${
+                  activePricingTab === "voice"
+                    ? "bg-[#e96a26] text-white"
+                    : "bg-white text-gray-600 hover:bg-gray-50"
+                }`}
+              >
+                Voice Pricing
               </button>
             </div>
 
-            {/* Pro Plan */}
-            <div className="bg-[#0052CC] text-white p-8 rounded-xl shadow-md hover:shadow-lg transition relative">
-              <div className="absolute top-0 right-0 bg-yellow-400 text-gray-900 text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg">
-                POPULAR
+            {/* SMS Pricing Table */}
+            {activePricingTab === "sms" && (
+              <div className="bg-white rounded-xl shadow-md overflow-hidden">
+                <table className="min-w-full divide-y divide-gray-200">
+                  <thead className="bg-gray-50">
+                    <tr>
+                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                       SMS Credits
+                      </th>
+                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        Price (GHC)
+                      </th>
+                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        Previous Price
+                      </th>
+                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        Cost per SMS
+                      </th>
+                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        Expiry
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody className="bg-white divide-y divide-gray-200">
+                    <tr className="bg-white">
+                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                        1,000
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                        10.00
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                        12.00
+                      </td>
+                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                          0.01
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                          No Expiry
+                        </td>
+                    </tr>
+                    <tr className="bg-[#fff5f0]">
+                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                        5,000
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                        45.00
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                        60.00
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                        0.009
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                          No Expiry
+                        </td>
+                    </tr>
+                    <tr className="bg-white">
+                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                        10,000
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                        85.00
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                        120.00
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                        0.0085
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                          No Expiry
+                        </td>
+                    </tr>
+                    <tr className="bg-[#fff5f0]">
+                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                        50,000
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                        375.00
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                        600.00
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                        0.0075
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                          No Expiry
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
-              <h3 className="text-xl font-bold mb-2">Professional</h3>
-              <p className="text-blue-100 mb-6">
-                For growing businesses with higher volume
-              </p>
-              <div className="mb-6">
-                <span className="text-4xl font-bold">Ghc49</span>
-                <span className="text-blue-100"> / month</span>
-              </div>
-              <ul className="mb-8 space-y-3">
-                <li className="flex items-center">
-                  <CheckCircle className="h-5 w-5 text-green-300 mr-2" />
-                  <span>10,000 SMS messages / month</span>
-                </li>
-                <li className="flex items-center">
-                  <CheckCircle className="h-5 w-5 text-green-300 mr-2" />
-                  <span>1,000 Voice minutes / month</span>
-                </li>
-                <li className="flex items-center">
-                  <CheckCircle className="h-5 w-5 text-green-300 mr-2" />
-                  <span>Advanced analytics</span>
-                </li>
-                <li className="flex items-center">
-                  <CheckCircle className="h-5 w-5 text-green-300 mr-2" />
-                  <span>Priority support</span>
-                </li>
-                <li className="flex items-center">
-                  <CheckCircle className="h-5 w-5 text-green-300 mr-2" />
-                  <span>Dedicated phone numbers</span>
-                </li>
-              </ul>
-              <button className="w-full bg-white text-[#0052CC] py-3 rounded-md font-medium hover:bg-gray-100 transition">
-                <a href="https://push.esoko.com/en/signup">Get Started</a>
-              </button>
-            </div>
+            )}
 
-            {/* Enterprise Plan */}
-            <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition">
-              <h3 className="text-xl font-bold mb-2">Enterprise</h3>
-              <p className="text-gray-600 mb-6">
-                Custom solutions for large organizations
-              </p>
-              <div className="mb-6">
-                <span className="text-4xl font-bold">Custom</span>
-                <span className="text-gray-600"> pricing</span>
+            {/* Voice Pricing Cards */}
+            {activePricingTab === "voice" && (
+              <div className="grid md:grid-cols-3 gap-8">
+                <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition">
+                  <h3 className="text-xl font-bold mb-2">Starter</h3>
+                  <p className="text-gray-600 mb-6">Perfect for small businesses</p>
+                  <div className="mb-6">
+                    <span className="text-4xl font-bold">GHC 50</span>
+                    <span className="text-gray-600"> / month</span>
+                  </div>
+                  <ul className="mb-8 space-y-3">
+                    <li className="flex items-center">
+                      <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
+                      <span>1,000 minutes</span>
+                    </li>
+                    <li className="flex items-center">
+                      <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
+                      <span>Basic call recording</span>
+                    </li>
+                    <li className="flex items-center">
+                      <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
+                      <span>Standard support</span>
+                    </li>
+                  </ul>
+                  <button className="w-full bg-[#0052CC] text-white py-3 rounded-md font-medium hover:bg-blue-700 transition">
+                    Get Started
+                  </button>
+                </div>
+
+                <div className="bg-[#0052CC] text-white p-8 rounded-xl shadow-md hover:shadow-lg transition relative">
+                  <div className="absolute top-0 right-0 bg-yellow-400 text-gray-900 text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg">
+                    POPULAR
+                  </div>
+                  <h3 className="text-xl font-bold mb-2">Professional</h3>
+                  <p className="text-blue-100 mb-6">For growing businesses</p>
+                  <div className="mb-6">
+                    <span className="text-4xl font-bold">GHC 200</span>
+                    <span className="text-blue-100"> / month</span>
+                  </div>
+                  <ul className="mb-8 space-y-3">
+                    <li className="flex items-center">
+                      <CheckCircle className="h-5 w-5 text-green-300 mr-2" />
+                      <span>5,000 minutes</span>
+                    </li>
+                    <li className="flex items-center">
+                      <CheckCircle className="h-5 w-5 text-green-300 mr-2" />
+                      <span>Advanced call recording</span>
+                    </li>
+                    <li className="flex items-center">
+                      <CheckCircle className="h-5 w-5 text-green-300 mr-2" />
+                      <span>Priority support</span>
+                    </li>
+                    <li className="flex items-center">
+                      <CheckCircle className="h-5 w-5 text-green-300 mr-2" />
+                      <span>Custom phone numbers</span>
+                    </li>
+                  </ul>
+                  <button className="w-full bg-white text-[#0052CC] py-3 rounded-md font-medium hover:bg-gray-100 transition">
+                    Get Started
+                  </button>
+                </div>
+
+                <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition">
+                  <h3 className="text-xl font-bold mb-2">Enterprise</h3>
+                  <p className="text-gray-600 mb-6">For large organizations</p>
+                  <div className="mb-6">
+                    <span className="text-4xl font-bold">Custom</span>
+                    <span className="text-gray-600"> pricing</span>
+                  </div>
+                  <ul className="mb-8 space-y-3">
+                    <li className="flex items-center">
+                      <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
+                      <span>Unlimited minutes</span>
+                    </li>
+                    <li className="flex items-center">
+                      <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
+                      <span>Full call recording</span>
+                    </li>
+                    <li className="flex items-center">
+                      <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
+                      <span>24/7 dedicated support</span>
+                    </li>
+                    <li className="flex items-center">
+                      <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
+                      <span>Custom integrations</span>
+                    </li>
+                  </ul>
+                  <button className="w-full bg-gray-100 text-[#0052CC] py-3 rounded-md font-medium hover:bg-gray-200 transition">
+                    Contact Sales
+                  </button>
+                </div>
               </div>
-              <ul className="mb-8 space-y-3">
-                <li className="flex items-center">
-                  <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
-                  <span>Unlimited SMS messages</span>
-                </li>
-                <li className="flex items-center">
-                  <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
-                  <span>Unlimited Voice minutes</span>
-                </li>
-                <li className="flex items-center">
-                  <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
-                  <span>Custom analytics & reporting</span>
-                </li>
-                <li className="flex items-center">
-                  <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
-                  <span>24/7 dedicated support</span>
-                </li>
-                <li className="flex items-center">
-                  <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
-                  <span>SLA guarantees</span>
-                </li>
-                <li className="flex items-center">
-                  <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
-                  <span>Custom integrations</span>
-                </li>
-              </ul>
-              <button className="w-full bg-gray-100 text-[#0052CC] py-3 rounded-md font-medium hover:bg-gray-200 transition">
-                Contact Sales
-              </button>
-            </div>
+            )}
           </div>
 
+          {/* Existing Pay-as-you-go table */}
           <div className="mt-12 bg-white p-8 rounded-xl shadow-md">
             <h3 className="text-xl font-bold mb-6">Pay-as-you-go Option</h3>
             <div className="overflow-x-auto">
@@ -571,7 +677,7 @@ try {
                   </tr>
                 </thead>
                 <tbody className="bg-white divide-y divide-gray-200">
-                  <tr>
+                  <tr className="bg-white">
                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                       SMS (per message)
                     </td>
@@ -588,7 +694,7 @@ try {
                       ₦0.0150
                     </td>
                   </tr>
-                  <tr>
+                  <tr className="bg-[#fff5f0]">
                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                       Voice (per minute)
                     </td>
@@ -605,7 +711,7 @@ try {
                       ₦0.030
                     </td>
                   </tr>
-                  <tr>
+                  <tr className="bg-white">
                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                       Phone Numbers (per month)
                     </td>
@@ -633,10 +739,10 @@ try {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl font-bold text-[#0052CC] mb-4">
               Trusted by Innovative Companies
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-[#0052CC] max-w-3xl mx-auto">
               Join thousands of businesses that rely on our platform for their
               critical communications.
             </p>
@@ -861,13 +967,13 @@ try {
               </div>
               <div className="md:col-span-1">
                 <div className="flex flex-col items-center md:items-start">
-                  <p className="text-4xl font-bold text-[#0052CC] mb-2">4+</p>
+                  <p className="text-4xl font-bold text-[#0052CC] mb-2">10+</p>
                   <p className="text-gray-600">Countries</p>
                 </div>
               </div>
               <div className="md:col-span-1">
                 <div className="flex flex-col items-center md:items-start">
-                  <p className="text-4xl font-bold text-[#0052CC] mb-2">50+</p>
+                  <p className="text-4xl font-bold text-[#0052CC] mb-2">2M+</p>
                   <p className="text-gray-600">Messages Sent</p>
                 </div>
               </div>
@@ -886,10 +992,10 @@ try {
       <section id="integrations" className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl font-bold text-[#0052CC] mb-4">
               Seamless Integrations
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-[#0052CC] max-w-3xl mx-auto">
               Connect with your favorite tools and frameworks with our
               comprehensive SDKs and libraries.
             </p>
@@ -1256,7 +1362,7 @@ try {
             <div className="flex flex-col md:flex-row justify-between items-center">
               <div className="mb-4 md:mb-0">
                 <p className="text-gray-400">
-                  &copy; {new Date().getFullYear()} esoko. All rights reserved.
+                  &copy; {new Date().getFullYear()} push-esoko. All rights reserved.
                 </p>
               </div>
               <div className="flex space-x-6">
