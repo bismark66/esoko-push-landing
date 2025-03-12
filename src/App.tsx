@@ -9,16 +9,12 @@ import {
   Clock,
   Shield,
   CheckCircle,
-  X,
   ChevronRight,
-  MessageCircle,
 } from "lucide-react";
 import { useCopilotReadable } from "@copilotkit/react-core";
 
 function App() {
   const [showCookieBanner, setShowCookieBanner] = useState(true);
-  const [showChat, setShowChat] = useState(false);
-  const [email, setEmail] = useState("");
   const [activeLanguage, setActiveLanguage] = useState("JavaScript");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [context, setContext] = useState("");
@@ -32,7 +28,6 @@ function App() {
   const handleNewsletterSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     alert("Thank you for subscribing to our newsletter!");
-    setEmail("");
   };
 
   useEffect(() => {
@@ -100,143 +95,145 @@ try {
     echo 'Error: ' . $error->getMessage();
 }`,
   };
-// 'Ariel','Century Gothic','CenturyGothic', 'AppleGothic',
+
   return (
-    <div className="min-h-screen bg-white text-gray-800" style={{ fontFamily: " 'Manrope',Ariel,sans-serif" }}>
-      {/* Navigation */}
-      <nav className="bg-white shadow-sm sticky top-0 z-50 font-bold">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-16">
-            <div className="flex items-center">
-              <img src="/assets/esoko_logo.png" alt="" className="w-30 h-20" />
-            </div>
-
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8">
-              <a
-                href="#features"
-                className="text-gray-600 hover:text-[#e96a26]"
-              >
-                Features
-              </a>
-              <a
-                href="#technical"
-                className="text-gray-600 hover:text-[#e96a26]"
-              >
-                Technical
-              </a>
-              <a href="#pricing" className="text-gray-600 hover:text-[#e96a26]">
-                Pricing
-              </a>
-              <a
-                href="#integrations"
-                className="text-gray-600 hover:text-[#e96a26]"
-              >
-                Integrations
-              </a>
-              <button className="bg-[#e96a26] text-white px-4 py-2 rounded-md hover:bg-orange-700 transition">
-                <a href="https://sso.esoko.com/en/signup">Get Started</a>
-              </button>
-            </div>
-
-            {/* Mobile menu button */}
-            <div className="md:hidden flex items-center">
-              <button
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#0052CC]"
-                aria-expanded="false"
-              >
-                <span className="sr-only">Open main menu</span>
-                {!isMobileMenuOpen ? (
-                  <svg
-                    className="block h-6 w-6"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    aria-hidden="true"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M4 6h16M4 12h16M4 18h16"
-                    />
-                  </svg>
-                ) : (
-                  <svg
-                    className="block h-6 w-6"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    aria-hidden="true"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M6 18L18 6M6 6l12 12"
-                    />
-                  </svg>
-                )}
-              </button>
-            </div>
+    <div
+      className="min-h-screen bg-white text-gray-800"
+      style={{ fontFamily: " 'Manrope',Ariel,sans-serif" }}
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between h-16">
+          <div className="flex items-center">
+            <img src="/assets/esoko_logo.png" alt="" className="w-30 h-20" />
           </div>
-        </div>
 
-        {/* Mobile menu */}
-        <div className={`md:hidden ${isMobileMenuOpen ? "block" : "hidden"}`}>
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white shadow-lg">
-            <a
-              href="#features"
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-[#FF6B00] hover:bg-gray-50"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-8">
+            <a href="#features" className="text-gray-600 hover:text-[#e96a26]">
               Features
             </a>
-            <a
-              href="#technical"
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-[#FF6B00] hover:bg-gray-50"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
+            <a href="#technical" className="text-gray-600 hover:text-[#e96a26]">
               Technical
             </a>
-            <a
-              href="#pricing"
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-[#0052CC] hover:bg-gray-50"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
+            <a href="#pricing" className="text-gray-600 hover:text-[#e96a26]">
               Pricing
             </a>
             <a
               href="#integrations"
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-[#0052CC] hover:bg-gray-50"
-              onClick={() => setIsMobileMenuOpen(false)}
+              className="text-gray-600 hover:text-[#e96a26]"
             >
               Integrations
             </a>
-            <button className="w-full mt-2 bg-[#0052CC] text-white px-4 py-2 rounded-md hover:bg-blue-700 transition">
-              <a
-                href="https://push.esoko.com/en/signup"
-                className="block text-center"
-              >
-                Get Started
-              </a>
+            <button className="bg-[#e96a26] text-white px-4 py-2 rounded-md hover:bg-orange-700 transition">
+              <a href="https://sso.esoko.com/en/signup">Get Started</a>
+            </button>
+          </div>
+
+          {/* Mobile menu button */}
+          <div className="md:hidden flex items-center">
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#0052CC]"
+              aria-expanded="false"
+            >
+              <span className="sr-only">Open main menu</span>
+              {!isMobileMenuOpen ? (
+                <svg
+                  className="block h-6 w-6"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                </svg>
+              ) : (
+                <svg
+                  className="block h-6 w-6"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              )}
             </button>
           </div>
         </div>
-      </nav>
+      </div>
+
+      {/* Mobile menu */}
+      <div className={`md:hidden ${isMobileMenuOpen ? "block" : "hidden"}`}>
+        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white shadow-lg">
+          <a
+            href="#features"
+            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-[#FF6B00] hover:bg-gray-50"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            Features
+          </a>
+          <a
+            href="#technical"
+            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-[#FF6B00] hover:bg-gray-50"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            Technical
+          </a>
+          <a
+            href="#pricing"
+            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-[#0052CC] hover:bg-gray-50"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            Pricing
+          </a>
+          <a
+            href="#integrations"
+            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-[#0052CC] hover:bg-gray-50"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            Integrations
+          </a>
+          <button className="w-full mt-2 bg-[#0052CC] text-white px-4 py-2 rounded-md hover:bg-blue-700 transition">
+            <a
+              href="https://push.esoko.com/en/signup"
+              className="block text-center"
+            >
+              Get Started
+            </a>
+          </button>
+        </div>
+      </div>
 
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-[#0052CC] to-[#0066FF] text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h1 className="text-2xl md:text-5xl font-normal leading-tight mb-6 letter-spacing-2 mb-8" style={{ fontFamily: "'Manrope', Ariel, sans-serif",letterSpacing: '-2px',lineHeight: '1.1', color: '#ffffff' }}>
+              <h1
+                className="text-2xl md:text-5xl font-normal leading-tight mb-6 letter-spacing-2 mb-8"
+                style={{
+                  fontFamily: "'Manrope', Ariel, sans-serif",
+                  letterSpacing: "-2px",
+                  lineHeight: "1.1",
+                  color: "#ffffff",
+                }}
+              >
                 Powerful SMS & Voice APIs for modern applications
               </h1>
-              <p className="text-xl mb-8 text-[#ffffff]" >
+              <p className="text-xl mb-8 text-[#ffffff]">
                 Connect with your users globally through reliable, scalable
                 communication APIs that integrate seamlessly with your
                 applications.
@@ -256,7 +253,7 @@ try {
             <div className="hidden md:block">
               <img
                 // src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-               src="/assets/smiling-lady.jpg"
+                src="/assets/smiling-lady.jpg"
                 alt="Communication API Illustration"
                 className="rounded-lg shadow-xl w-90 h-100"
                 // width={500}
@@ -345,14 +342,14 @@ try {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-12 items-start">
-            <div>
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-start">
+            <div className="w-full px-2 sm:px-0">
               <div className="mb-8">
                 <div className="flex items-center mb-4">
-                  <Code className="h-6 w-6 text-[#0052CC] mr-3" />
+                  <Code className="h-6 w-6 text-[#0052CC] mr-3 flex-shrink-0" />
                   <h3 className="text-xl font-bold">Simple Integration</h3>
                 </div>
-                <p className="text-gray-600 ml-9">
+                <p className="text-gray-600 ml-9 break-words">
                   Integrate our APIs in minutes with clear documentation and
                   SDKs for all major programming languages.
                 </p>
@@ -360,10 +357,10 @@ try {
 
               <div className="mb-8">
                 <div className="flex items-center mb-4">
-                  <Clock className="h-6 w-6 text-[#0052CC] mr-3" />
+                  <Clock className="h-6 w-6 text-[#0052CC] mr-3 flex-shrink-0" />
                   <h3 className="text-xl font-bold">Fast Response Times</h3>
                 </div>
-                <p className="text-gray-600 ml-9">
+                <p className="text-gray-600 ml-9 break-words">
                   Our APIs have an average response time of &lt;100ms, ensuring
                   your communications are delivered instantly.
                 </p>
@@ -371,40 +368,40 @@ try {
 
               <div className="mb-8">
                 <div className="flex items-center mb-4">
-                  <Shield className="h-6 w-6 text-[#0052CC] mr-3" />
+                  <Shield className="h-6 w-6 text-[#0052CC] mr-3 flex-shrink-0" />
                   <h3 className="text-xl font-bold">Reliability & Uptime</h3>
                 </div>
-                <p className="text-gray-600 ml-9">
+                <p className="text-gray-600 ml-9 break-words">
                   99.99% uptime SLA with redundant infrastructure across
                   multiple regions for maximum reliability.
                 </p>
               </div>
             </div>
 
-            <div className="bg-gray-900 p-6 rounded-lg shadow-lg">
-              <div className="flex mb-4">
+            <div className="w-full bg-gray-900 p-3 sm:p-6 rounded-lg shadow-lg overflow-hidden">
+              <div className="flex flex-wrap mb-4 -mx-1">
                 <button
-                  className={`px-4 py-2 ${
+                  className={`px-3 py-2 m-1 text-sm ${
                     activeLanguage === "JavaScript"
                       ? "bg-gray-800 text-blue-400"
                       : "text-gray-400 hover:text-white"
-                  } rounded-t-md mr-2`}
+                  } rounded-md`}
                   onClick={() => setActiveLanguage("JavaScript")}
                 >
                   JavaScript
                 </button>
                 <button
-                  className={`px-4 py-2 ${
+                  className={`px-3 py-2 m-1 text-sm ${
                     activeLanguage === "Python"
                       ? "bg-gray-800 text-blue-400"
                       : "text-gray-400 hover:text-white"
-                  } mr-2`}
+                  }`}
                   onClick={() => setActiveLanguage("Python")}
                 >
                   Python
                 </button>
                 <button
-                  className={`px-4 py-2 ${
+                  className={`px-3 py-2 m-1 text-sm ${
                     activeLanguage === "PHP"
                       ? "bg-gray-800 text-blue-400"
                       : "text-gray-400 hover:text-white"
@@ -414,9 +411,13 @@ try {
                   PHP
                 </button>
               </div>
-              <pre className="text-blue-400 overflow-x-auto p-4 bg-gray-800 rounded-b-md">
-                {codeExamples[activeLanguage as keyof typeof codeExamples]}
-              </pre>
+              <div className="relative">
+                <pre className="text-blue-400 overflow-x-auto p-2 sm:p-4 bg-gray-800 rounded-b-md text-sm sm:text-base w-full">
+                  <code className="whitespace-pre-wrap break-all">
+                    {codeExamples[activeLanguage as keyof typeof codeExamples]}
+                  </code>
+                </pre>
+              </div>
             </div>
           </div>
         </div>
@@ -467,7 +468,7 @@ try {
                   <thead className="bg-gray-50">
                     <tr>
                       <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                       SMS Credits
+                        SMS Credits
                       </th>
                       <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                         Price (GHC)
@@ -494,12 +495,12 @@ try {
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                         12.00
                       </td>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                          0.01
-                        </td>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                          No Expiry
-                        </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                        0.01
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                        No Expiry
+                      </td>
                     </tr>
                     <tr className="bg-[#fff5f0]">
                       <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
@@ -515,8 +516,8 @@ try {
                         0.009
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                          No Expiry
-                        </td>
+                        No Expiry
+                      </td>
                     </tr>
                     <tr className="bg-white">
                       <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
@@ -532,8 +533,8 @@ try {
                         0.0085
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                          No Expiry
-                        </td>
+                        No Expiry
+                      </td>
                     </tr>
                     <tr className="bg-[#fff5f0]">
                       <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
@@ -549,7 +550,7 @@ try {
                         0.0075
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                          No Expiry
+                        No Expiry
                       </td>
                     </tr>
                   </tbody>
@@ -560,93 +561,20 @@ try {
             {/* Voice Pricing Cards */}
             {activePricingTab === "voice" && (
               <div className="grid md:grid-cols-3 gap-8">
-                <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition">
-                  <h3 className="text-xl font-bold mb-2">Starter</h3>
-                  <p className="text-gray-600 mb-6">Perfect for small businesses</p>
-                  <div className="mb-6">
-                    <span className="text-4xl font-bold">GHC 50</span>
-                    <span className="text-gray-600"> / month</span>
-                  </div>
-                  <ul className="mb-8 space-y-3">
-                    <li className="flex items-center">
-                      <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
-                      <span>1,000 minutes</span>
-                    </li>
-                    <li className="flex items-center">
-                      <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
-                      <span>Basic call recording</span>
-                    </li>
-                    <li className="flex items-center">
-                      <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
-                      <span>Standard support</span>
-                    </li>
-                  </ul>
-                  <button className="w-full bg-[#0052CC] text-white py-3 rounded-md font-medium hover:bg-blue-700 transition">
-                    Get Started
-                  </button>
-                </div>
-
-                <div className="bg-[#0052CC] text-white p-8 rounded-xl shadow-md hover:shadow-lg transition relative">
-                  <div className="absolute top-0 right-0 bg-yellow-400 text-gray-900 text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg">
+                <div className="bg-[#0052CC] text-white text-center p-12 rounded-xl shadow-md hover:shadow-lg transition relative">
+                  {/* <div className="absolute top-0 right-0 bg-yellow-400 text-gray-900 text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg">
                     POPULAR
-                  </div>
-                  <h3 className="text-xl font-bold mb-2">Professional</h3>
-                  <p className="text-blue-100 mb-6">For growing businesses</p>
+                  </div> */}
+                  <h1 className="text-2xl font-bold mb-2">Price Per Minute</h1>
+                  {/* <p className="text-blue-100 mb-6">For growing businesses</p> */}
                   <div className="mb-6">
-                    <span className="text-4xl font-bold">GHC 200</span>
-                    <span className="text-blue-100"> / month</span>
+                    <span className="text-4xl font-bold">GHC 0.13</span>
+                    {/* <span className="text-blue-100"> / month</span> */}
                   </div>
-                  <ul className="mb-8 space-y-3">
-                    <li className="flex items-center">
-                      <CheckCircle className="h-5 w-5 text-green-300 mr-2" />
-                      <span>5,000 minutes</span>
-                    </li>
-                    <li className="flex items-center">
-                      <CheckCircle className="h-5 w-5 text-green-300 mr-2" />
-                      <span>Advanced call recording</span>
-                    </li>
-                    <li className="flex items-center">
-                      <CheckCircle className="h-5 w-5 text-green-300 mr-2" />
-                      <span>Priority support</span>
-                    </li>
-                    <li className="flex items-center">
-                      <CheckCircle className="h-5 w-5 text-green-300 mr-2" />
-                      <span>Custom phone numbers</span>
-                    </li>
-                  </ul>
-                  <button className="w-full bg-white text-[#0052CC] py-3 rounded-md font-medium hover:bg-gray-100 transition">
-                    Get Started
-                  </button>
-                </div>
-
-                <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition">
-                  <h3 className="text-xl font-bold mb-2">Enterprise</h3>
-                  <p className="text-gray-600 mb-6">For large organizations</p>
-                  <div className="mb-6">
-                    <span className="text-4xl font-bold">Custom</span>
-                    <span className="text-gray-600"> pricing</span>
-                  </div>
-                  <ul className="mb-8 space-y-3">
-                    <li className="flex items-center">
-                      <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
-                      <span>Unlimited minutes</span>
-                    </li>
-                    <li className="flex items-center">
-                      <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
-                      <span>Full call recording</span>
-                    </li>
-                    <li className="flex items-center">
-                      <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
-                      <span>24/7 dedicated support</span>
-                    </li>
-                    <li className="flex items-center">
-                      <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
-                      <span>Custom integrations</span>
-                    </li>
-                  </ul>
-                  <button className="w-full bg-gray-100 text-[#0052CC] py-3 rounded-md font-medium hover:bg-gray-200 transition">
-                    Contact Sales
-                  </button>
+                  <hr />
+                  <p className="text-blue-100 mb-6 mt-6">
+                    Per second billing. You are billed for answered calls only.
+                  </p>
                 </div>
               </div>
             )}
@@ -1362,7 +1290,8 @@ try {
             <div className="flex flex-col md:flex-row justify-between items-center">
               <div className="mb-4 md:mb-0">
                 <p className="text-gray-400">
-                  &copy; {new Date().getFullYear()} push-esoko. All rights reserved.
+                  &copy; {new Date().getFullYear()} push-esoko. All rights
+                  reserved.
                 </p>
               </div>
               <div className="flex space-x-6">
